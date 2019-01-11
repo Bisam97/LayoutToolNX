@@ -1,0 +1,8 @@
+# Gambas Form File 3.0
+
+{ Form Form
+  MoveScaled(0,0,182.8571,102.8571)
+  { DrawingArea1 DrawingArea
+    MoveScaled(0,0,182.8571,102.8571)
+  }
+}

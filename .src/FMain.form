@@ -1,5 +1,20 @@
 # Gambas Form File 3.0
 
-{ FMain Form
-  MoveScaled(0,0,64,64)
+{ Form Form
+  MoveScaled(0,0,50,23)
+  { Panel1 Panel
+    MoveScaled(1,1,48,21)
+    { Button1 Button
+      MoveScaled(2,2,25,4)
+      Text = ("New Home Menu Layout")
+    }
+    { Button2 Button
+      MoveScaled(2,7,25,4)
+      Text = ("Edit a Home Menu Layout")
+    }
+    { Button3 Button
+      MoveScaled(29,2,16,9)
+      Text = ("Open\nHome Menu\nLayout Dir")
+    }
+  }
 }

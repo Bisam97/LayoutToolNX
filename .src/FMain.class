@@ -1,2 +1,11 @@
 ' Gambas class file
 
+Public Layout As CLayout
+
+Public Sub Button1_Click()
+  
+  FMain.Hide
+  layout = New CHomeMenu(1)
+  FRawEditor.LoadHomeMenu(layout)
+  
+End
