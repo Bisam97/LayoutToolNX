@@ -2,57 +2,77 @@
 
 Inherits CLayout
 
-Private $N_ScrolleArea As New Integer[5]
-Private $T_Blank As New Integer[3]
-Private $N_GameRoot As New Integer[3]
-Private $N_Game As New Integer[5]
-Private $N_ScrollWindow As New Integer[5]
-Private $N_Icon_00 As New Integer[3]
-Private $N_Icon_01 As New Integer[3]
-Private $N_Icon_02 As New Integer[3]
-Private $N_Icon_03 As New Integer[3]
-Private $N_Icon_04 As New Integer[3]
-Private $N_Icon_05 As New Integer[3]
-Private $N_Icon_06 As New Integer[3]
-Private $N_Icon_07 As New Integer[3]
-Private $N_Icon_08 As New Integer[3]
-Private $N_Icon_09 As New Integer[3]
-Private $N_Icon_10 As New Integer[3]
-Private $N_Icon_11 As New Integer[3]
-Private $N_Icon_12 As New Integer[5]
-Private $N_System As New Integer[5]
-Private $L_BtnNoti As New Integer[3]
-Private $L_BtnShop As New Integer[3]
-Private $L_BtnPvr As New Integer[3]
-Private $L_BtnCtrl As New Integer[3]
-Private $L_BtnSet As New Integer[3]
-Private $L_BtnPow As New Integer[3]
+Private $N_ScrolleArea As New Integer[6]
+Private $T_Blank As New Integer[4]
+Private $N_GameRoot As New Integer[4]
+Private $N_Game As New Integer[6]
+Private $N_ScrollWindow As New Integer[4]
+Private $N_Icon_00 As New Integer[4]
+Private $N_Icon_01 As New Integer[4]
+Private $N_Icon_02 As New Integer[4]
+Private $N_Icon_03 As New Integer[4]
+Private $N_Icon_04 As New Integer[4]
+Private $N_Icon_05 As New Integer[4]
+Private $N_Icon_06 As New Integer[4]
+Private $N_Icon_07 As New Integer[4]
+Private $N_Icon_08 As New Integer[4]
+Private $N_Icon_09 As New Integer[4]
+Private $N_Icon_10 As New Integer[4]
+Private $N_Icon_11 As New Integer[4]
+Private $N_Icon_12 As New Integer[4]
+Private $N_System As New Float[6]
+Private $L_BtnNoti As New Integer[4]
+Private $L_BtnShop As New Integer[4]
+Private $L_BtnPvr As New Integer[4]
+Private $L_BtnCtrl As New Integer[4]
+Private $L_BtnSet As New Integer[4]
+Private $L_BtnPow As New Integer[4]
+Private $N_MyPage As New Float[6]
+Private $L_BtnAccount_00 As New Integer[4]
+Private $L_BtnAccount_01 As New Integer[4]
+Private $L_BtnAccount_02 As New Integer[4]
+Private $L_BtnAccount_03 As New Integer[4]
+Private $L_BtnAccount_04 As New Integer[4]
+Private $L_BtnAccount_05 As New Integer[4]
+Private $L_BtnAccount_06 As New Integer[4]
+Private $L_BtnAccount_07 As New Integer[4]
+Private $L_Hud As New Integer[4]
 
-Property N_ScrolleArea As Integer[] ' [x,y,z,SizeX,SizeY]
-Property T_Blank As Integer[] ' [x,y,z]
-Property N_GameRoot As Integer[] ' [x,y,z]
-Property N_Game As Integer[] ' [x,y,z,ScaleX,ScaleY]
-Property N_ScrollWindow As Integer[] ' [x,y,z,SizeX,SizeY]
-Property N_Icon_00 As Integer[] ' [x,y,z]
-Property N_Icon_01 As Integer[] ' [x,y,z]
-Property N_Icon_02 As Integer[] ' [x,y,z]
-Property N_Icon_03 As Integer[] ' [x,y,z]
-Property N_Icon_04 As Integer[] ' [x,y,z]
-Property N_Icon_05 As Integer[] ' [x,y,z]
-Property N_Icon_06 As Integer[] ' [x,y,z]
-Property N_Icon_07 As Integer[] ' [x,y,z]
-Property N_Icon_08 As Integer[] ' [x,y,z]
-Property N_Icon_09 As Integer[] ' [x,y,z]
-Property N_Icon_10 As Integer[] ' [x,y,z]
-Property N_Icon_11 As Integer[] ' [x,y,z]
-Property N_Icon_12 As Integer[] ' All Games Button [x,y,z,ScaleX,ScaleY]
-Property N_System As Integer[] ' [x,y,z,ScaleX,ScaleY]
-Property L_BtnNoti As Integer[] ' [x,y,z]
-Property L_BtnShop As Integer[] ' [x,y,z]
-Property L_BtnPvr As Integer[] ' [x,y,z]
-Property L_BtnCtrl As Integer[] ' [x,y,z]
-Property L_BtnSet As Integer[] ' [x,y,z]
-Property L_BtnPow As Integer[] ' [x,y,z]
+Property N_ScrolleArea As Integer[] ' [Disabled,x,y,z,SizeX,SizeY]
+Property T_Blank As Integer[] ' [Disabled,x,y,z]
+Property N_GameRoot As Integer[] ' [Disabled,x,y,z]
+Property N_Game As Integer[] ' [Disabled,x,y,z,ScaleX,ScaleY]
+Property N_ScrollWindow As Integer[] ' [Disabled,x,y,z,SizeX,SizeY]
+Property N_Icon_00 As Integer[] ' [Disabled,x,y,z]
+Property N_Icon_01 As Integer[] ' [Disabled,x,y,z]
+Property N_Icon_02 As Integer[] ' [Disabled,x,y,z]
+Property N_Icon_03 As Integer[] ' [Disabled,x,y,z]
+Property N_Icon_04 As Integer[] ' [Disabled,x,y,z]
+Property N_Icon_05 As Integer[] ' [Disabled,x,y,z]
+Property N_Icon_06 As Integer[] ' [Disabled,x,y,z]
+Property N_Icon_07 As Integer[] ' [Disabled,x,y,z]
+Property N_Icon_08 As Integer[] ' [Disabled,x,y,z]
+Property N_Icon_09 As Integer[] ' [Disabled,x,y,z]
+Property N_Icon_10 As Integer[] ' [Disabled,x,y,z]
+Property N_Icon_11 As Integer[] ' [Disabled,x,y,z]
+Property N_Icon_12 As Integer[] ' All Games Button [Disabled,x,y,z,ScaleX,ScaleY]
+Property N_System As Float[] ' [Disabled,x,y,z,ScaleX,ScaleY]
+Property L_BtnNoti As Integer[] ' [Disabled,x,y,z]
+Property L_BtnShop As Integer[] ' [Disabled,x,y,z]
+Property L_BtnPvr As Integer[] ' [Disabled,x,y,z]
+Property L_BtnCtrl As Integer[] ' [Disabled,x,y,z]
+Property L_BtnSet As Integer[] ' [Disabled,x,y,z]
+Property L_BtnPow As Integer[] ' [Disabled,x,y,z]
+Property N_MyPage As Float[] '[Disabled,x,y,z,ScaleX,ScaleY]
+Property L_BtnAccount_00 As Integer[] '[Disabled,x,y,z]
+Property L_BtnAccount_01 As Integer[] '[Disabled,x,y,z]
+Property L_BtnAccount_02 As Integer[] '[Disabled,x,y,z]
+Property L_BtnAccount_03 As Integer[] '[Disabled,x,y,z]
+Property L_BtnAccount_04 As Integer[] '[Disabled,x,y,z]
+Property L_BtnAccount_05 As Integer[] '[Disabled,x,y,z]
+Property L_BtnAccount_06 As Integer[] '[Disabled,x,y,z]
+Property L_BtnAccount_07 As Integer[] '[Disabled,x,y,z]
+Property L_Hud As Integer[] '[Disable,x,y,z]
 
 Private Function N_ScrolleArea_Read() As INTEGER[]
   
@@ -139,217 +159,370 @@ Private Sub N_Icon_01_Write(Value As INTEGER[])
 End
 
 Private Function N_Icon_02_Read() As INTEGER[]
-
+  
   Return $N_Icon_02
-
+  
 End
 
 Private Sub N_Icon_02_Write(Value As INTEGER[])
-
+  
   $N_Icon_02 = Value
-
+  
 End
 
 Private Function N_Icon_03_Read() As INTEGER[]
-
+  
   Return $N_Icon_03
-
+  
 End
 
 Private Sub N_Icon_03_Write(Value As INTEGER[])
-
+  
   $N_Icon_03 = Value
-
+  
 End
 
 Private Function N_Icon_04_Read() As INTEGER[]
-
+  
   Return $N_Icon_04
-
+  
 End
 
 Private Sub N_Icon_04_Write(Value As INTEGER[])
-
+  
   $N_Icon_04 = Value
-
+  
 End
 
 Private Function N_Icon_05_Read() As INTEGER[]
-
+  
   Return $N_Icon_05
-
+  
 End
 
 Private Sub N_Icon_05_Write(Value As INTEGER[])
-
+  
   $N_Icon_05 = Value
-
+  
 End
 
 Private Function N_Icon_06_Read() As INTEGER[]
-
+  
   Return $N_Icon_06
-
+  
 End
 
 Private Sub N_Icon_06_Write(Value As INTEGER[])
-
+  
   $N_Icon_06 = Value
-
+  
 End
 
 Private Function N_Icon_07_Read() As INTEGER[]
-
+  
   Return $N_Icon_07
-
+  
 End
 
 Private Sub N_Icon_07_Write(Value As INTEGER[])
-
+  
   $N_Icon_07 = Value
-
+  
 End
 
 Private Function N_Icon_08_Read() As INTEGER[]
-
+  
   Return $N_Icon_08
-
+  
 End
 
 Private Sub N_Icon_08_Write(Value As INTEGER[])
-
+  
   $N_Icon_08 = Value
-
+  
 End
 
 Private Function N_Icon_09_Read() As INTEGER[]
-
+  
   Return $N_Icon_09
-
+  
 End
 
 Private Sub N_Icon_09_Write(Value As INTEGER[])
-
+  
   $N_Icon_09 = Value
-
+  
 End
 
 Private Function N_Icon_10_Read() As INTEGER[]
-
+  
   Return $N_Icon_10
-
+  
 End
 
 Private Sub N_Icon_10_Write(Value As INTEGER[])
-
+  
   $N_Icon_10 = Value
-
+  
 End
 
 Private Function N_Icon_11_Read() As INTEGER[]
-
+  
   Return $N_Icon_11
-
+  
 End
 
 Private Sub N_Icon_11_Write(Value As INTEGER[])
-
+  
   $N_Icon_11 = Value
-
+  
 End
 
 Private Function N_Icon_12_Read() As INTEGER[]
-
+  
   Return $N_Icon_12
-
+  
 End
 
 Private Sub N_Icon_12_Write(Value As INTEGER[])
-
+  
   $N_Icon_12 = Value
-
+  
 End
 
-Private Function N_System_Read() As INTEGER[]
-
+Private Function N_System_Read() As Float[]
+  
   Return $N_System
-
+  
 End
 
-Private Sub N_System_Write(Value As INTEGER[])
-
+Private Sub N_System_Write(Value As Float[])
+  
   $N_System = Value
-
+  
 End
 
 Private Function L_BtnNoti_Read() As INTEGER[]
-
+  
   Return $L_BtnNoti
-
+  
 End
 
 Private Sub L_BtnNoti_Write(Value As INTEGER[])
-
+  
   $L_BtnNoti = Value
-
+  
 End
 
 Private Function L_BtnShop_Read() As INTEGER[]
-
+  
   Return $L_BtnShop
-
+  
 End
 
 Private Sub L_BtnShop_Write(Value As INTEGER[])
-
+  
   $L_BtnShop = Value
-
+  
 End
 
 Private Function L_BtnPvr_Read() As INTEGER[]
-
+  
   Return $L_BtnPvr
-
+  
 End
 
 Private Sub L_BtnPvr_Write(Value As INTEGER[])
-
+  
   $L_BtnPvr = Value
-
+  
 End
 
 Private Function L_BtnCtrl_Read() As INTEGER[]
-
+  
   Return $L_BtnCtrl
-
+  
 End
 
 Private Sub L_BtnCtrl_Write(Value As INTEGER[])
-
+  
   $L_BtnCtrl = Value
-
+  
 End
 
 Private Function L_BtnSet_Read() As INTEGER[]
-
+  
   Return $L_BtnSet
-
+  
 End
 
 Private Sub L_BtnSet_Write(Value As INTEGER[])
-
+  
   $L_BtnSet = Value
-
+  
 End
 
 Private Function L_BtnPow_Read() As INTEGER[]
-
+  
   Return $L_BtnPow
-
+  
 End
 
 Private Sub L_BtnPow_Write(Value As INTEGER[])
-
+  
   $L_BtnPow = Value
+  
+End
 
+Private Function L_BtnAccount_00_Read() As Integer[]
+  
+  Return $L_BtnAccount_00
+  
+End
+
+Private Sub L_BtnAccount_00_Write(Value As Integer[])
+  
+  $L_BtnAccount_00 = Value
+  
+End
+
+Private Function L_BtnAccount_01_Read() As Integer[]
+  
+  Return $L_BtnAccount_01
+  
+End
+
+Private Sub L_BtnAccount_01_Write(Value As Integer[])
+  
+  $L_BtnAccount_01 = Value
+  
+End
+
+Private Function L_BtnAccount_02_Read() As Integer[]
+  
+  Return $L_BtnAccount_02
+  
+End
+
+Private Sub L_BtnAccount_02_Write(Value As Integer[])
+  
+  $L_BtnAccount_02 = Value
+  
+End
+
+Private Function L_BtnAccount_03_Read() As Integer[]
+  
+  Return $L_BtnAccount_03
+  
+End
+
+Private Sub L_BtnAccount_03_Write(Value As Integer[])
+  
+  $L_BtnAccount_03 = Value
+  
+End
+
+Private Function L_BtnAccount_04_Read() As Integer[]
+  
+  Return $L_BtnAccount_04
+  
+End
+
+Private Sub L_BtnAccount_04_Write(Value As Integer[])
+  
+  $L_BtnAccount_04 = Value
+  
+End
+
+Private Function L_BtnAccount_05_Read() As Integer[]
+  
+  Return $L_BtnAccount_05
+  
+End
+
+Private Sub L_BtnAccount_05_Write(Value As Integer[])
+  
+  $L_BtnAccount_05 = Value
+  
+End
+
+Private Function L_BtnAccount_06_Read() As Integer[]
+  
+  Return $L_BtnAccount_06
+  
+End
+
+Private Sub L_BtnAccount_06_Write(Value As Integer[])
+  
+  $L_BtnAccount_06 = Value
+  
+End
+
+Private Function L_BtnAccount_07_Read() As Integer[]
+  
+  Return $L_BtnAccount_07
+  
+End
+
+Private Sub L_BtnAccount_07_Write(Value As Integer[])
+  
+  $L_BtnAccount_07 = Value
+  
+End
+
+Private Function L_Hud_Read() As Integer[]
+  
+  Return $L_Hud
+  
+End
+
+Private Sub L_Hud_Write(Value As Integer[])
+  
+  $L_Hud = Value
+  
+End
+
+Private Function N_MyPage_Read() As Float[]
+  
+  Return $N_MyPage
+  
+End
+
+Private Sub N_MyPage_Write(Value As Float[])
+  
+  $N_MyPage = Value
+  
+End
+
+''Normal Funktions
+
+Public Sub Export(Path As String, l As CHomeMenu)
+  
+  Jason As String
+  Patches As New Collection[]
+  Prosition As Collection
+  Size As Collection
+  Scale As Collection
+  
+  InsertGames(Patches, Prosition, Size, Scale, l)
+  
+End
+
+Public Sub InsertGames(Patches As Collection[], Prosition As Collection, Size As Collection, Scale As Collection, l As CHomeMenu)
+  
+  Dim Patch As Collection
+  
+  Patch = New Collection
+  Prosition = New Collection
+  Size = New Collection
+  
+  Size.Add(l.N_ScrolleArea[4], "X")
+  Size.Add(l.N_ScrolleArea[5], "Y")
+  Prosition.Add(l.N_ScrolleArea[1], "X")
+  Prosition.Add(l.N_ScrolleArea[2], "Y")
+  Prosition.Add(l.N_ScrolleArea[3], "Z")
+  Patch.Add("N_ScrolleArea", "PaneName")
+  Patch.Add(Prosition, "Position")
+  Patch.Add(Size, "Size")
+  
 End

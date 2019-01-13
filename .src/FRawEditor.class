@@ -18,69 +18,84 @@ Public Sub LoadHomeMenu(LayoutHome As CHomeMenu) ''New Init of a Blank Homemenu
   
   Dim l As CHomeMenu
   
-  pic = New Image(1280, 720)
+  pic = New Image(3531, 720)
   l = LayoutHome
   $L = l
   ''244
   Me.Show()
   Me.SetFocus()
   
-  l.N_Icon_00[0] = 387 - 262
-  l.N_Icon_00[1] = 200
+  l.N_Game[4] = 1
+  l.N_Game[5] = 1
   
-  l.N_Icon_01[0] = 387
-  l.N_Icon_01[1] = 200
+  l.N_Icon_00[1] = 387 - 262 + 122
+  l.N_Icon_00[2] = 200 + 122
   
-  l.N_Icon_02[0] = 387 + 262
-  l.N_Icon_02[1] = 200
+  l.N_Icon_01[1] = 387 + 122
+  l.N_Icon_01[2] = 200 + 122
   
-  l.N_Icon_03[0] = 387 + 262 * 2
-  l.N_Icon_03[1] = 200
+  l.N_Icon_02[1] = 387 + 262 + 122
+  l.N_Icon_02[2] = 200 + 122
   
-  l.N_Icon_04[0] = 387 + 262 * 3
-  l.N_Icon_04[1] = 200
+  l.N_Icon_03[1] = 387 + 262 * 2 + 122
+  l.N_Icon_03[2] = 200 + 122
   
-  l.N_Icon_05[0] = 387 + 262 * 4
-  l.N_Icon_05[1] = 200
+  l.N_Icon_04[1] = 387 + 262 * 3 + 122
+  l.N_Icon_04[2] = 200 + 122
   
-  l.N_Icon_06[0] = 387 + 262 * 5
-  l.N_Icon_06[1] = 200
+  l.N_Icon_05[1] = 387 + 262 * 4 + 122
+  l.N_Icon_05[2] = 200 + 122
   
-  l.N_Icon_07[0] = 387 + 262 * 6
-  l.N_Icon_07[1] = 200
+  l.N_Icon_06[1] = 387 + 262 * 5 + 122
+  l.N_Icon_06[2] = 200 + 122
   
-  l.N_Icon_08[0] = 387 + 262 * 7
-  l.N_Icon_08[1] = 200
+  l.N_Icon_07[1] = 387 + 262 * 6 + 122
+  l.N_Icon_07[2] = 200 + 122
   
-  l.N_Icon_09[0] = 387 + 262 * 8
-  l.N_Icon_09[1] = 200
+  l.N_Icon_08[1] = 387 + 262 * 7 + 122
+  l.N_Icon_08[2] = 200 + 122
   
-  l.N_Icon_10[0] = 387 + 262 * 9
-  l.N_Icon_10[1] = 200
+  l.N_Icon_09[1] = 387 + 262 * 8 + 122
+  l.N_Icon_09[2] = 200 + 122
   
-  l.N_Icon_11[0] = 387 + 262 * 10
-  l.N_Icon_11[1] = 200
+  l.N_Icon_10[1] = 387 + 262 * 9 + 122
+  l.N_Icon_10[2] = 200 + 122
   
-  l.N_Icon_12[0] = 387 + 262 * 11
-  l.N_Icon_12[1] = 200
+  l.N_Icon_11[1] = 387 + 262 * 10 + 122
+  l.N_Icon_11[2] = 200 + 122
   
-  l.L_BtnNoti[0] = 325
-  l.L_BtnNoti[1] = 502
+  l.N_Icon_12[1] = 387 + 262 * 11 + 122
+  l.N_Icon_12[2] = 200 + 122
   
-  l.L_BtnShop[0] = 434
-  l.L_BtnShop[1] = 502
+  l.L_BtnNoti[1] = 325
+  l.L_BtnNoti[2] = 502
   
-  l.L_BtnPvr[0] = 542
-  l.L_BtnPvr[1] = 502
+  l.L_BtnShop[1] = 434
+  l.L_BtnShop[2] = 502
   
-  l.L_BtnCtrl[0] = 650
-  l.L_BtnCtrl[1] = 502
+  l.L_BtnPvr[1] = 542
+  l.L_BtnPvr[2] = 502
   
-  l.L_BtnSet[0] = 758
-  l.L_BtnSet[1] = 502
+  l.L_BtnCtrl[1] = 650
+  l.L_BtnCtrl[2] = 502
   
-  l.L_BtnPow[0] = 866
-  l.L_BtnPow[1] = 502
+  l.L_BtnSet[1] = 758
+  l.L_BtnSet[2] = 502
+  
+  l.L_BtnPow[1] = 866
+  l.L_BtnPow[2] = 502
+  
+  l.N_MyPage = [0, 61 + 28, 37 + 28, 0, 1, 1]
+  
+  l.L_BtnAccount_00 = [0, 62 + 28, 37 + 28, 0]
+  l.L_BtnAccount_01 = [0, 132 + 28, 37 + 28, 0]
+  l.L_BtnAccount_02 = [0, 202 + 28, 37 + 28, 0]
+  l.L_BtnAccount_03 = [0, 272 + 28, 37 + 28, 0]
+  l.L_BtnAccount_04 = [0, 342 + 28, 37 + 28, 0]
+  l.L_BtnAccount_05 = [0, 412 + 28, 37 + 28, 0]
+  l.L_BtnAccount_06 = [0, 482 + 28, 37 + 28, 0]
+  l.L_BtnAccount_07 = [0, 552 + 28, 37 + 28, 0]
+  
   drawHomemenu()
   
 End
@@ -91,48 +106,81 @@ Public Sub drawHomemenu()
   
   l = $L
   Paint.Begin(Pic)
+  
+  ''Painting of the Gameslots
   Paint.Font = Font["Gambas,Bold,30"]
-  Paint.Rectangle(CFloat(l.N_Icon_00[0]), CFloat(l.N_Icon_00[1]), 244.0, 244.0, 1)
-  Paint.Text("GAME 1", l.N_Icon_00[0], l.N_Icon_00[1] + 122 + 15)
-  Paint.Rectangle(CFloat(l.N_Icon_01[0]), CFloat(l.N_Icon_01[1]), 244.0, 244.0, 1)
-  Paint.Text("GAME 2", l.N_Icon_01[0], l.N_Icon_01[1] + 122 + 15)
-  Paint.Rectangle(CFloat(l.N_Icon_02[0]), CFloat(l.N_Icon_02[1]), 244.0, 244.0, 1)
-  Paint.Text("GAME 3", l.N_Icon_02[0], l.N_Icon_02[1] + 122 + 15)
-  Paint.Rectangle(CFloat(l.N_Icon_03[0]), CFloat(l.N_Icon_03[1]), 244.0, 244.0, 1)
-  Paint.Text("GAME 4", l.N_Icon_03[0], l.N_Icon_03[1] + 122 + 15)
-  Paint.Rectangle(CFloat(l.N_Icon_04[0]), CFloat(l.N_Icon_04[1]), 244.0, 244.0, 1)
-  Paint.Text("GAME 5", l.N_Icon_04[0], l.N_Icon_04[1] + 122 + 15)
-  Paint.Rectangle(CFloat(l.N_Icon_05[0]), CFloat(l.N_Icon_05[1]), 244.0, 244.0, 1)
-  Paint.Text("GAME 6", l.N_Icon_05[0], l.N_Icon_05[1] + 122 + 15)
-  Paint.Rectangle(CFloat(l.N_Icon_06[0]), CFloat(l.N_Icon_06[1]), 244.0, 244.0, 1)
-  Paint.Text("GAME 7", l.N_Icon_06[0], l.N_Icon_06[1] + 122 + 15)
-  Paint.Rectangle(CFloat(l.N_Icon_07[0]), CFloat(l.N_Icon_07[1]), 244.0, 244.0, 1)
-  Paint.Text("GAME 8", l.N_Icon_07[0], l.N_Icon_07[1] + 122 + 15)
-  Paint.Rectangle(CFloat(l.N_Icon_08[0]), CFloat(l.N_Icon_08[1]), 244.0, 244.0, 1)
-  Paint.Text("GAME 9", l.N_Icon_08[0], l.N_Icon_08[1] + 122 + 15)
-  Paint.Rectangle(CFloat(l.N_Icon_09[0]), CFloat(l.N_Icon_09[1]), 244.0, 244.0, 1)
-  Paint.Text("GAME 10", l.N_Icon_09[0], l.N_Icon_09[1] + 122 + 15)
-  Paint.Rectangle(CFloat(l.N_Icon_10[0]), CFloat(l.N_Icon_10[1]), 244.0, 244.0, 1)
-  Paint.Text("GAME 11", l.N_Icon_10[0], l.N_Icon_10[1] + 122 + 15)
-  Paint.Rectangle(CFloat(l.N_Icon_11[0]), CFloat(l.N_Icon_11[1]), 244.0, 244.0, 1)
-  Paint.Text("GAME 12", l.N_Icon_11[0], l.N_Icon_11[1] + 122 + 15)
-  Paint.Rectangle(CFloat(l.N_Icon_12[0]), CFloat(l.N_Icon_12[1]), 244.0, 244.0, 1)
-  Paint.Text("All Games", l.N_Icon_12[0], l.N_Icon_12[1] + 122 + 15)
-  Paint.Ellipse(l.L_BtnNoti[0], l.L_BtnNoti[1], 88, 88)
-  Paint.Ellipse(l.L_BtnShop[0], l.L_BtnShop[1], 88, 88)
-  Paint.Ellipse(l.L_BtnPvr[0], l.L_BtnPvr[1], 88, 88)
-  Paint.Ellipse(l.L_BtnCtrl[0], l.L_BtnCtrl[1], 88, 88)
-  Paint.Ellipse(l.L_BtnSet[0], l.L_BtnSet[1], 88, 88) 
-  Paint.Ellipse(l.L_BtnPow[0], l.L_BtnPow[1], 88, 88)
+  Paint.Text("H", l.N_Icon_00[1], l.N_Icon_00[2])
+  Paint.Rectangle(CFloat(l.N_Icon_00[1]) - 244 * l.N_Game[4] * 0.5, CFloat(l.N_Icon_00[2]) - 244 * l.N_Game[5] * 0.5, 244.0, 244.0, 1)
+  Paint.Text("GAME 1", l.N_Icon_00[1] - 122, l.N_Icon_00[2] * l.N_Game[4])
+  Paint.Rectangle(CFloat(l.N_Icon_01[1]) - 244 * l.N_Game[4] * 0.5, CFloat(l.N_Icon_01[2]) - 244 * l.N_Game[5] * 0.5, 244.0, 244.0, 1)
+  Paint.Text("GAME 2", l.N_Icon_01[1] - 122, l.N_Icon_01[2] * l.N_Game[4])
+  Paint.Rectangle(CFloat(l.N_Icon_02[1]) - 244 * l.N_Game[4] * 0.5, CFloat(l.N_Icon_02[2]) - 244 * l.N_Game[5] * 0.5, 244.0, 244.0, 1)
+  Paint.Text("GAME 3", l.N_Icon_02[1] - 122, l.N_Icon_02[2] * l.N_Game[4])
+  Paint.Rectangle(CFloat(l.N_Icon_03[1]) - 244 * l.N_Game[4] * 0.5, CFloat(l.N_Icon_03[2]) - 244 * l.N_Game[5] * 0.5, 244.0, 244.0, 1)
+  Paint.Text("GAME 4", l.N_Icon_03[1] - 122, l.N_Icon_03[2] * l.N_Game[4])
+  Paint.Rectangle(CFloat(l.N_Icon_04[1]) - 244 * l.N_Game[4] * 0.5, CFloat(l.N_Icon_04[2]) - 244 * l.N_Game[5] * 0.5, 244.0, 244.0, 1)
+  Paint.Text("GAME 5", l.N_Icon_04[1] - 122, l.N_Icon_04[2] * l.N_Game[4])
+  Paint.Rectangle(CFloat(l.N_Icon_05[1]) - 244 * l.N_Game[4] * 0.5, CFloat(l.N_Icon_05[2]) - 244 * l.N_Game[5] * 0.5, 244.0, 244.0, 1)
+  Paint.Text("GAME 6", l.N_Icon_05[1] - 122, l.N_Icon_05[2] * l.N_Game[4])
+  Paint.Rectangle(CFloat(l.N_Icon_06[1]) - 244 * l.N_Game[4] * 0.5, CFloat(l.N_Icon_06[2]) - 244 * l.N_Game[5] * 0.5, 244.0, 244.0, 1)
+  Paint.Text("GAME 7", l.N_Icon_06[1] - 122, l.N_Icon_06[2] * l.N_Game[4])
+  Paint.Rectangle(CFloat(l.N_Icon_07[1]) - 244 * l.N_Game[4] * 0.5, CFloat(l.N_Icon_07[2]) - 244 * l.N_Game[5] * 0.5, 244.0, 244.0, 1)
+  Paint.Text("GAME 8", l.N_Icon_07[1] - 122, l.N_Icon_07[2] * l.N_Game[4])
+  Paint.Rectangle(CFloat(l.N_Icon_08[1]) - 244 * l.N_Game[4] * 0.5, CFloat(l.N_Icon_08[2]) - 244 * l.N_Game[5] * 0.5, 244.0, 244.0, 1)
+  Paint.Text("GAME 9", l.N_Icon_08[1] - 122, l.N_Icon_08[2] * l.N_Game[4])
+  Paint.Rectangle(CFloat(l.N_Icon_09[1]) - 244 * l.N_Game[4] * 0.5, CFloat(l.N_Icon_09[2]) - 244 * l.N_Game[5] * 0.5, 244.0, 244.0, 1)
+  Paint.Text("GAME 10", l.N_Icon_09[1] - 122, l.N_Icon_09[2] * l.N_Game[4])
+  Paint.Rectangle(CFloat(l.N_Icon_10[1]) - 244 * l.N_Game[4] * 0.5, CFloat(l.N_Icon_10[2]) - 244 * l.N_Game[5] * 0.5, 244.0, 244.0, 1)
+  Paint.Text("GAME 11", l.N_Icon_10[1] - 122, l.N_Icon_10[2] * l.N_Game[4])
+  Paint.Rectangle(CFloat(l.N_Icon_11[1]) - 244 * l.N_Game[4] * 0.5, CFloat(l.N_Icon_11[2]) - 244 * l.N_Game[5] * 0.5, 244.0, 244.0, 1)
+  Paint.Text("GAME 12", l.N_Icon_11[1] - 122, l.N_Icon_11[2] * l.N_Game[4])
+  Paint.Rectangle(CFloat(l.N_Icon_12[1]) - 244 * l.N_Game[4] * 0.5, CFloat(l.N_Icon_12[2]) - 244 * l.N_Game[5] * 0.5, 244.0, 244.0, 1)
+  Paint.Text("All Games", l.N_Icon_12[1] - 122, l.N_Icon_12[2] * l.N_Game[4])
+  
+  '' Painting of the Sysmenu
+  Paint.Ellipse(l.L_BtnNoti[1], l.L_BtnNoti[2], 88, 88)
+  Paint.Ellipse(l.L_BtnShop[1], l.L_BtnShop[2], 88, 88)
+  Paint.Ellipse(l.L_BtnPvr[1], l.L_BtnPvr[2], 88, 88)
+  Paint.Ellipse(l.L_BtnCtrl[1], l.L_BtnCtrl[2], 88, 88)
+  Paint.Ellipse(l.L_BtnSet[1], l.L_BtnSet[2], 88, 88) 
+  Paint.Ellipse(l.L_BtnPow[1], l.L_BtnPow[2], 88, 88)
+  
+  '' Painting of the Accounts
+  Paint.Font = Font["Gambas,Bold,20"]
+  Paint.Ellipse(l.L_BtnAccount_00[1] - 56 * l.N_MyPage[4] * 0.5, l.L_BtnAccount_00[2] - 56 * l.N_MyPage[5] * 0.5, 56 * l.N_MyPage[4], 56 * l.N_MyPage[5])
+  Paint.Text("A1", l.L_BtnAccount_00[1] - 28 + 18 * l.N_MyPage[4], l.L_BtnAccount_00[2] * l.N_MyPage[5])
+  Paint.Ellipse(l.L_BtnAccount_01[1] - 56 * l.N_MyPage[4] * 0.5, l.L_BtnAccount_01[2] - 56 * l.N_MyPage[5] * 0.5, 56 * l.N_MyPage[4], 56 * l.N_MyPage[5])
+  Paint.Text("A2", l.L_BtnAccount_01[1] - 28 + 18 * l.N_MyPage[4], l.L_BtnAccount_01[2] * l.N_MyPage[5])
+  Paint.Ellipse(l.L_BtnAccount_02[1] - 56 * l.N_MyPage[4] * 0.5, l.L_BtnAccount_02[2] - 56 * l.N_MyPage[5] * 0.5, 56 * l.N_MyPage[4], 56 * l.N_MyPage[5])
+  Paint.Text("A3", l.L_BtnAccount_02[1] - 28 + 18 * l.N_MyPage[4], l.L_BtnAccount_02[2] * l.N_MyPage[5])
+  Paint.Ellipse(l.L_BtnAccount_03[1] - 56 * l.N_MyPage[4] * 0.5, l.L_BtnAccount_03[2] - 56 * l.N_MyPage[5] * 0.5, 56 * l.N_MyPage[4], 56 * l.N_MyPage[5])
+  Paint.Text("A4", l.L_BtnAccount_03[1] - 28 + 18 * l.N_MyPage[4], l.L_BtnAccount_03[2] * l.N_MyPage[5])
+  Paint.Ellipse(l.L_BtnAccount_04[1] - 56 * l.N_MyPage[4] * 0.5, l.L_BtnAccount_04[2] - 56 * l.N_MyPage[5] * 0.5, 56 * l.N_MyPage[4], 56 * l.N_MyPage[5])
+  Paint.Text("A5", l.L_BtnAccount_04[1] - 28 + 18 * l.N_MyPage[4], l.L_BtnAccount_04[2] * l.N_MyPage[5])
+  Paint.Ellipse(l.L_BtnAccount_05[1] - 56 * l.N_MyPage[4] * 0.5, l.L_BtnAccount_05[2] - 56 * l.N_MyPage[5] * 0.5, 56 * l.N_MyPage[4], 56 * l.N_MyPage[5])
+  Paint.Text("A6", l.L_BtnAccount_05[1] - 28 + 18 * l.N_MyPage[4], l.L_BtnAccount_05[2] * l.N_MyPage[5])
+  Paint.Ellipse(l.L_BtnAccount_06[1] - 56 * l.N_MyPage[4] * 0.5, l.L_BtnAccount_06[2] - 56 * l.N_MyPage[5] * 0.5, 56 * l.N_MyPage[4], 56 * l.N_MyPage[5])
+  Paint.Text("A7", l.L_BtnAccount_06[1] - 28 + 18 * l.N_MyPage[4], l.L_BtnAccount_06[2] * l.N_MyPage[5])
+  Paint.Ellipse(l.L_BtnAccount_07[1] - 56 * l.N_MyPage[4] * 0.5, l.L_BtnAccount_07[2] - 56 * l.N_MyPage[5] * 0.5, 56 * l.N_MyPage[4], 56 * l.N_MyPage[5])
+  Paint.Text("A8", l.L_BtnAccount_07[1] - 28 + 18 * l.N_MyPage[4], l.L_BtnAccount_07[2] * l.N_MyPage[5])
   
   Paint.Stroke()
-  Paint.DrawImage(Image.Load("./pic/Ctrl.png"), l.L_BtnCtrl[0] + 20.5, l.L_BtnCtrl[1] + 20.5)
-  Paint.DrawImage(Image.Load("./pic/Pvr.png"), l.L_BtnPvr[0] + 19, l.L_BtnPvr[1] + 26.5)
-  Paint.DrawImage(Image.Load("./pic/Shop.png"), l.L_BtnShop[0] + 22, l.L_BtnShop[1] + 20)
-  Paint.DrawImage(Image.Load("./pic/Noti.png"), l.L_BtnNoti[0] + 22, l.L_BtnNoti[1] + 23)
-  Paint.DrawImage(Image.Load("./pic/Set.png"), l.L_BtnSet[0] + 22.5, l.L_BtnSet[1] + 22.5)
-  Paint.DrawImage(Image.Load("./pic/Pow.png"), l.L_BtnPow[0] + 24.5, l.L_BtnPow[1] + 23)
+  
+  '' Insert of the Sysmenu Icons
+  Paint.DrawImage(Image.Load("./pic/Ctrl.png"), l.L_BtnCtrl[1] + 20.5, l.L_BtnCtrl[2] + 20.5)
+  Paint.DrawImage(Image.Load("./pic/Pvr.png"), l.L_BtnPvr[1] + 19, l.L_BtnPvr[2] + 26.5)
+  Paint.DrawImage(Image.Load("./pic/Shop.png"), l.L_BtnShop[1] + 22, l.L_BtnShop[2] + 20)
+  Paint.DrawImage(Image.Load("./pic/Noti.png"), l.L_BtnNoti[1] + 22, l.L_BtnNoti[2] + 23)
+  Paint.DrawImage(Image.Load("./pic/Set.png"), l.L_BtnSet[1] + 22.5, l.L_BtnSet[2] + 22.5)
+  Paint.DrawImage(Image.Load("./pic/Pow.png"), l.L_BtnPow[1] + 24.5, l.L_BtnPow[2] + 23)
   
   Paint.End()
+  pic.Save("./test.png", 100)
+  
+End
+
+Public Sub Button1_Click()
+  
+  $L.Export
   
 End

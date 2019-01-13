@@ -4,5 +4,9 @@
   MoveScaled(0,0,182.8571,102.8571)
   { DrawingArea1 DrawingArea
     MoveScaled(0,0,182.8571,102.8571)
+    { Button1 Button
+      MoveScaled(112,48,16,4)
+      Text = ("Test Export")
+    }
   }
 }
