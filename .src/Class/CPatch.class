@@ -1,0 +1,142 @@
+' Gambas class file
+
+Property Read Plane As Collection
+Property Prosition As String '' X|Y|Z
+Property Size As String '' X|Y|Z
+Property Scale As String '' X|Y|Z
+Property Name As String
+Property Visibility As Boolean
+Private $Plane As Collection
+Private $size As CSize
+Private $Prosi As CPosition
+Private $scale As CScale
+
+Public Sub _new()
+  
+  $size = New CSize
+  $Prosi = New CPosition
+  $scale = New CScale
+  $Plane = New Collection
+  
+  $Plane.Add("", "Name")
+  $Plane.Add(True, "Visibility")
+  
+  $scale.X = 0
+  $scale.Y = 0
+  $scale.Z = 0
+  
+  $size.X = 0
+  $size.Y = 0
+  $size.Z = 0
+  
+  $Prosi.X = 0
+  $Prosi.Y = 0
+  $Prosi.Z = 0
+  
+  $Plane.Add($Prosi, "Position")
+  $Plane.Add($size, "Size")
+  $Plane.Add($scale, "Scale")
+  
+End
+
+Private Function Plane_Read() As Collection
+  
+  Return $Plane
+  
+End
+
+Private Function Prosition_Read() As String
+  
+  Return $Prosi.X & "|" & $Prosi.Y & "|" & $Prosi.Z
+  
+End
+
+Private Sub Prosition_Write(Value As String)
+  
+  Dim t As String[]
+  
+  t = Split(Value, "|")
+  
+  $Prosi.X = CInt(t[0])
+  $Prosi.Y = CInt(t[1])
+  $Prosi.Z = CInt(t[2])
+  
+End
+
+Private Function Size_Read() As String
+  
+  Return $size.X & "|" & $size.Y & "|" & $size.Z
+  
+End
+
+Private Sub Size_Write(Value As String)
+  
+  Dim t As String[]
+  
+  t = Split(Value, "|")
+  
+  $size.X = CInt(t[0])
+  $size.Y = CInt(t[1])
+  
+End
+
+Private Function Scale_Read() As String
+  
+  Return $scale.X & "|" & $scale.Y & "|" & $scale.Z
+  
+End
+
+Private Sub Scale_Write(Value As String)
+  
+  Dim t As String[]
+  
+  t = Split(Value, "|")
+  
+  $scale.X = CInt(t[0])
+  $scale.Y = CInt(t[1])
+  
+End
+
+Private Function Name_Read() As String
+  
+  Return $Plane["Name"]
+  
+End
+
+Private Sub Name_Write(Value As String)
+  
+  $Plane["Name"] = Value
+  
+End
+
+Private Function Visibility_Read() As Boolean
+  
+  Return $Plane["Visibility"]
+  
+End
+
+Private Sub Visibility_Write(Value As Boolean)
+  
+  $Plane["Visibility"] = Value
+  
+End
+
+Public Sub ExportToJson() As String
+  
+  Dim ex As String
+  
+  ex = "{'PaneName':'" & Me.Name & "', 'Position':{'X':" & $Prosi.X & ",'Y':" & $Prosi.Y & ",'Z':" & $Prosi.Z & "}"
+  If $size.x > 0 Then
+    
+    ex &= ", 'Size': {'X':" & $size.X & ",'Y':" & $size.Y & "}"
+  Endif
+  If $scale.x > 0 Then
+    
+    ex &= ", 'Scale': {'X':" & $scale.X & ",'Y':" & $scale.Y & "}"
+    
+  Endif
+  ex &= "}"
+  
+  Return ex
+  
+End

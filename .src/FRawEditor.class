@@ -14,7 +14,7 @@ Public Sub Form_Open()
   
 End
 
-Public Sub LoadHomeMenu(LayoutHome As CHomeMenu) ''New Init of a Blank Homemenu
+Public Sub LoadHomeMenu(LayoutHome As CHomeMenu, Optional bdraw As Boolean = True) ''New Init of a Blank Homemenu
   
   Dim l As CHomeMenu
   
@@ -95,8 +95,7 @@ Public Sub LoadHomeMenu(LayoutHome As CHomeMenu) ''New Init of a Blank Homemenu
   l.L_BtnAccount_05 = [0, 412 + 28, 37 + 28, 0]
   l.L_BtnAccount_06 = [0, 482 + 28, 37 + 28, 0]
   l.L_BtnAccount_07 = [0, 552 + 28, 37 + 28, 0]
-  
-  drawHomemenu()
+  If bdraw Then drawHomemenu()
   
 End
 

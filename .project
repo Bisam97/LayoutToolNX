@@ -1,6 +1,6 @@
 # Gambas Project File 3.0
 Title=NX Layout Tool
-Startup=FMain
+Startup=TEST
 Version=0.0.1
 Component=gb.image
 Component=gb.gui

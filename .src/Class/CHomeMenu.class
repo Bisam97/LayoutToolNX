@@ -19,7 +19,7 @@ Private $N_Icon_08 As New Integer[4]
 Private $N_Icon_09 As New Integer[4]
 Private $N_Icon_10 As New Integer[4]
 Private $N_Icon_11 As New Integer[4]
-Private $N_Icon_12 As New Integer[4]
+Private $N_Icon_12 As New Integer[6]
 Private $N_System As New Float[6]
 Private $L_BtnNoti As New Integer[4]
 Private $L_BtnShop As New Integer[4]
@@ -496,33 +496,194 @@ End
 
 ''Normal Funktions
 
-Public Sub Export(Path As String, l As CHomeMenu)
+Public Sub Export(Path As String, l As CLayout, Optional Content As String)
   
-  Jason As String
-  Patches As New Collection[]
-  Prosition As Collection
-  Size As Collection
-  Scale As Collection
+  Dim GamePatches As CPatch[]
+  Dim Patches As CPatch[]
+  Dim AccountPatches As CPatch[]
+  Dim Jasons As String
+  Dim tmp1 As String
+  Dim patch As CPatch
   
-  InsertGames(Patches, Prosition, Size, Scale, l)
+  Patches = New CPatch[]
+  
+  GamePatches = InsertGames(l)
+  AccountPatches = InsertAccounts(l)
+  ' SonstigePatches = InsertTheOtherShit(l)
+  tmp1 = Null
+  For Each patch In GamePatches
+    If tmp1 Then tmp1 &= ","
+    tmp1 &= patch.ExportToJson()
+    
+  Next
+  Print tmp1
+  File.Save(Temp("file"), tmp1)
   
 End
 
-Public Sub InsertGames(Patches As Collection[], Prosition As Collection, Size As Collection, Scale As Collection, l As CHomeMenu)
+Public Sub InsertGames(l As CHomeMenu) As CPatch[]
   
-  Dim Patch As Collection
+  Dim Patch As New CPatch
+  Dim Patches As CPatch[]
+  Dim temps As New CHomeMenu(1)
   
-  Patch = New Collection
-  Prosition = New Collection
-  Size = New Collection
+  Patches = New CPatch[]
   
-  Size.Add(l.N_ScrolleArea[4], "X")
-  Size.Add(l.N_ScrolleArea[5], "Y")
-  Prosition.Add(l.N_ScrolleArea[1], "X")
-  Prosition.Add(l.N_ScrolleArea[2], "Y")
-  Prosition.Add(l.N_ScrolleArea[3], "Z")
-  Patch.Add("N_ScrolleArea", "PaneName")
-  Patch.Add(Prosition, "Position")
-  Patch.Add(Size, "Size")
+  FRawEditor.LoadHomeMenu(temps, False)
+  
+  Patch.Plane.Add("N_GameRoot", "Name")
+  Patch.Prosition = CStr(CInt(l.N_GameRoot[1]) - CInt(temps.N_GameRoot[1])) & "|" & CStr(CInt(l.N_GameRoot[2]) - CInt(temps.N_GameRoot[2])) & "|" & CStr(CInt(l.N_GameRoot[3]) - CInt(temps.N_GameRoot[3]))
+  Patches.Add(Patch)
+  Patch = New CPatch
+  
+  Patch.Plane.Add("N_Game", "Name")
+  Patch.Prosition = CStr(CInt(l.N_Game[1]) - CInt(temps.N_Game[1])) & "|" & CStr(CInt(l.N_Game[2]) - CInt(temps.N_Game[2])) & "|" & CStr(CInt(l.N_Game[3]) - CInt(temps.N_Game[3]))
+  Patch.Scale = l.N_Game[4] & "|" & l.N_Game[5]
+  Patches.Add(Patch)
+  Patch = New CPatch
+  
+  Patch.Name = "N_Icon_00"
+  Patch.Visibility = l.N_Icon_00[0]
+  Patch.Prosition = CStr(l.N_Icon_00[1] - temps.N_ScrolleArea[1]) & "|" & CStr(l.N_Icon_00[2] - temps.N_ScrolleArea[2]) & "|" & CStr(l.N_Icon_00[3])
+  Patches.Add(Patch)
+  Patch = New CPatch
+  
+  Patch.Name = "N_Icon_01"
+  Patch.Visibility = l.N_Icon_01[0]
+  Patch.Prosition = CStr(l.N_Icon_01[1] - temps.N_ScrolleArea[1]) & "|" & CStr(l.N_Icon_01[2] - temps.N_ScrolleArea[2]) & "|" & CStr(l.N_Icon_01[3])
+  Patches.Add(Patch)
+  Patch = New CPatch
+  
+  Patch.Name = "N_Icon_02"
+  Patch.Visibility = l.N_Icon_02[0]
+  Patch.Prosition = CStr(l.N_Icon_02[1] - temps.N_ScrolleArea[1]) & "|" & CStr(l.N_Icon_02[2] - temps.N_ScrolleArea[2]) & "|" & CStr(l.N_Icon_02[3])
+  Patches.Add(Patch)
+  Patch = New CPatch
+  
+  Patch.Name = "N_Icon_03"
+  Patch.Visibility = l.N_Icon_03[0]
+  Patch.Prosition = CStr(l.N_Icon_03[1] - temps.N_ScrolleArea[1]) & "|" & CStr(l.N_Icon_03[2] - temps.N_ScrolleArea[2]) & "|" & CStr(l.N_Icon_03[3])
+  Patches.Add(Patch)
+  Patch = New CPatch
+  
+  Patch.Name = "N_Icon_04"
+  Patch.Visibility = l.N_Icon_04[0]
+  Patch.Prosition = CStr(l.N_Icon_04[1] - temps.N_ScrolleArea[1]) & "|" & CStr(l.N_Icon_04[2] - temps.N_ScrolleArea[2]) & "|" & CStr(l.N_Icon_04[3])
+  Patches.Add(Patch)
+  Patch = New CPatch
+  
+  Patch.Name = "N_Icon_05"
+  Patch.Visibility = l.N_Icon_05[0]
+  Patch.Prosition = CStr(l.N_Icon_05[1] - temps.N_ScrolleArea[1]) & "|" & CStr(l.N_Icon_05[2] - temps.N_ScrolleArea[2]) & "|" & CStr(l.N_Icon_05[3])
+  Patches.Add(Patch)
+  Patch = New CPatch
+  
+  Patch.Name = "N_Icon_06"
+  Patch.Visibility = l.N_Icon_06[0]
+  Patch.Prosition = CStr(l.N_Icon_06[1] - temps.N_ScrolleArea[1]) & "|" & CStr(l.N_Icon_06[2] - temps.N_ScrolleArea[2]) & "|" & CStr(l.N_Icon_06[3])
+  Patches.Add(Patch)
+  Patch = New CPatch
+  
+  Patch.Name = "N_Icon_07"
+  Patch.Visibility = l.N_Icon_07[0]
+  Patch.Prosition = CStr(l.N_Icon_07[1] - temps.N_ScrolleArea[1]) & "|" & CStr(l.N_Icon_07[2] - temps.N_ScrolleArea[2]) & "|" & CStr(l.N_Icon_07[3])
+  Patches.Add(Patch)
+  Patch = New CPatch
+  
+  Patch.Name = "N_Icon_08"
+  Patch.Visibility = l.N_Icon_08[0]
+  Patch.Prosition = CStr(l.N_Icon_08[1] - temps.N_ScrolleArea[1]) & "|" & CStr(l.N_Icon_08[2] - temps.N_ScrolleArea[2]) & "|" & CStr(l.N_Icon_08[3])
+  Patches.Add(Patch)
+  Patch = New CPatch
+  
+  Patch.Name = "N_Icon_09"
+  Patch.Visibility = l.N_Icon_09[0]
+  Patch.Prosition = CStr(l.N_Icon_09[1] - temps.N_ScrolleArea[1]) & "|" & CStr(l.N_Icon_09[2] - temps.N_ScrolleArea[2]) & "|" & CStr(l.N_Icon_09[3])
+  Patches.Add(Patch)
+  Patch = New CPatch
+  
+  Patch.Name = "N_Icon_10"
+  Patch.Visibility = l.N_Icon_10[0]
+  Patch.Prosition = CStr(l.N_Icon_10[1] - temps.N_ScrolleArea[1]) & "|" & CStr(l.N_Icon_10[2] - temps.N_ScrolleArea[2]) & "|" & CStr(l.N_Icon_10[3])
+  Patches.Add(Patch)
+  Patch = New CPatch
+  
+  Patch.Name = "N_Icon_11"
+  Patch.Visibility = l.N_Icon_11[0]
+  Patch.Prosition = CStr(l.N_Icon_11[1] - temps.N_ScrolleArea[1]) & "|" & CStr(l.N_Icon_11[2] - temps.N_ScrolleArea[2]) & "|" & CStr(l.N_Icon_11[3])
+  Patches.Add(Patch)
+  Patch = New CPatch
+  
+  Patch.Name = "N_Icon_12"
+  Patch.Visibility = l.N_Icon_12[0]
+  Patch.Prosition = CStr(l.N_Icon_12[1] - temps.N_ScrolleArea[1]) & "|" & CStr(l.N_Icon_12[2] - temps.N_ScrolleArea[2]) & "|" & CStr(l.N_Icon_12[3])
+  Patch.Scale = l.N_Icon_12[4] & "|" & CStr(l.N_Icon_12[5])
+  Patches.Add(Patch)
+  Return Patches
+  
+End
+
+Public Sub InsertAccounts(l As CHomeMenu) As CPatch[]
+  
+  Dim Patch As CPatch
+  Dim Patches As New CPatch[]
+  Dim temps As New CHomeMenu(1)
+  
+  FRawEditor.LoadHomeMenu(temps, False)
+  Patch = New CPatch
+  
+  Patch.Name = "N_MyPage"
+  Patch.Visibility = l.N_MyPage[0]
+  Patch.Prosition = CStr(l.N_MyPage[1] - temps.N_MyPage[1]) & "|" & CStr(l.N_MyPage[2] - temps.N_MyPage[2]) & "|" & l.N_MyPage[3]
+  Patch.Scale = l.N_MyPage[4] & "|" & l.N_MyPage[5]
+  Patches.Add(Patch)
+  Patch = New CPatch
+  
+  Patch.Name = "L_BtnAccount_00"
+  Patch.Visibility = l.L_BtnAccount_00[0]
+  Patch.Prosition = CStr(l.L_BtnAccount_00[1] - temps.N_MyPage[1]) & "|" & CStr(l.L_BtnAccount_00[2] - temps.N_MyPage[2]) & "|" & CStr(l.L_BtnAccount_00[3])
+  Patches.Add(Patch)
+  Patch = New CPatch
+  
+  Patch.Name = "L_BtnAccount_01"
+  Patch.Visibility = l.L_BtnAccount_01[0]
+  Patch.Prosition = CStr(l.L_BtnAccount_01[1] - temps.N_MyPage[1]) & "|" & CStr(l.L_BtnAccount_01[2] - temps.N_MyPage[2]) & "|" & CStr(l.L_BtnAccount_01[3])
+  Patches.Add(Patch)
+  Patch = New CPatch
+  
+  Patch.Name = "L_BtnAccount_02"
+  Patch.Visibility = l.L_BtnAccount_02[0]
+  Patch.Prosition = CStr(l.L_BtnAccount_02[1] - temps.N_MyPage[1]) & "|" & CStr(l.L_BtnAccount_02[2] - temps.N_MyPage[2]) & "|" & CStr(l.L_BtnAccount_02[3])
+  Patches.Add(Patch)
+  Patch = New CPatch
+  
+  Patch.Name = "L_BtnAccount_03"
+  Patch.Visibility = l.L_BtnAccount_03[0]
+  Patch.Prosition = CStr(l.L_BtnAccount_03[1] - temps.N_MyPage[1]) & "|" & CStr(l.L_BtnAccount_03[2] - temps.N_MyPage[2]) & "|" & CStr(l.L_BtnAccount_03[3])
+  Patches.Add(Patch)
+  Patch = New CPatch
+  
+  Patch.Name = "L_BtnAccount_04"
+  Patch.Visibility = l.L_BtnAccount_04[0]
+  Patch.Prosition = CStr(l.L_BtnAccount_04[1] - temps.N_MyPage[1]) & "|" & CStr(l.L_BtnAccount_04[2] - temps.N_MyPage[2]) & "|" & CStr(l.L_BtnAccount_04[3])
+  Patches.Add(Patch)
+  Patch = New CPatch
+  
+  Patch.Name = "L_BtnAccount_05"
+  Patch.Visibility = l.L_BtnAccount_05[0]
+  Patch.Prosition = CStr(l.L_BtnAccount_05[1] - temps.N_MyPage[1]) & "|" & CStr(l.L_BtnAccount_05[2] - temps.N_MyPage[2]) & "|" & CStr(l.L_BtnAccount_05[3])
+  Patches.Add(Patch)
+  Patch = New CPatch
+  
+  Patch.Name = "L_BtnAccount_06"
+  Patch.Visibility = l.L_BtnAccount_06[0]
+  Patch.Prosition = CStr(l.L_BtnAccount_06[1] - temps.N_MyPage[1]) & "|" & CStr(l.L_BtnAccount_06[2] - temps.N_MyPage[2]) & "|" & CStr(l.L_BtnAccount_06[3])
+  Patches.Add(Patch)
+  Patch = New CPatch
+  
+  Patch.Name = "L_BtnAccount_07"
+  Patch.Visibility = l.L_BtnAccount_07[0]
+  Patch.Prosition = CStr(l.L_BtnAccount_07[1] - temps.N_MyPage[1]) & "|" & CStr(l.L_BtnAccount_07[2] - temps.N_MyPage[2]) & "|" & CStr(l.L_BtnAccount_07[3])
+  Patches.Add(Patch)
   
 End

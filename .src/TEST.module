@@ -1,0 +1,14 @@
+' Gambas module file
+
+Private $Test As New CPatch
+
+Public Sub main()
+  
+  Dim l As CHomeMenu
+  
+  l = New CHomeMenu(0)
+  FRawEditor.LoadHomeMenu(l, False)
+  l.Export(Temp("ergebnis"), l)
+  Quit
+
+End
