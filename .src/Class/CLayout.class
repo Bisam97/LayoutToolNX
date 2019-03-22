@@ -1,0 +1,22 @@
+' Gambas class file
+
+Property Read type As Integer
+Private $type As Integer
+
+Public Sub _new(type As Integer)
+  
+  $type = type
+  
+End
+
+Public Sub Export(Path As String, l As CLayout, Optional Content As String)
+  
+  File.Save(Path, Content)
+  
+End
+
+Private Function type_Read() As Integer
+  
+  Return $type
+  
+End
